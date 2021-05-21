@@ -10,8 +10,7 @@ echo "${USER} ALL=(ALL) NOPASSWD: ALL" | sudo EDITOR="tee -a" visudo
 ```
 sudo apt install zsh -y # install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  # ohmyzsh
-y
-y
+
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  # zsh-autosuggestions
 sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions)/" ~/.zshrc
 sed -i "s/# DISABLE_AUTO_UPDATE/DISABLE_AUTO_UPDATE/" ~/.zshrc
@@ -19,7 +18,6 @@ echo 'PROMPT="%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"' >> ~/.zshrc
 echo alias doc="docker" >> ~/.zshrc
 echo alias docc="docker-compose" >> ~/.zshrc
 source ~/.zshrc
-
 echo set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab >> ~/.vimrc
 ```
 
