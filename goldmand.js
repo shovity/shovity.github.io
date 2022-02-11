@@ -16,15 +16,13 @@
 
     const mine = async () => {
         document.querySelectorAll('.start-mining-button')[2].click()
-        await sleep(100)
         document.querySelector('.modal-bottom .green-button').click()
+        await sleep(3000)
         document.querySelector('.mining-hub-menu a').click()
-        await sleep(5000)
+        await sleep(2000)
     }
-    
-    clearInterval(window.__a_interal)
-    window.__a_interal = setInterval(async () => {
-        
+
+    const tick = async () => {
         if (document.querySelectorAll('.start-mining-button')[2]) {
             log('mining')
             await mine()
@@ -43,6 +41,20 @@
             return
         }
 
-        log('waiting for next action')
-    }, 1000)
+        log(`Waiting for next action ${new Date().getSeconds()}`)
+
+        await sleep(1000)
+    }
+
+    document.querySelector('.mining-hub-menu a').click()
+    window.__t = Date.now()
+    const __t = window.__t
+
+    while (true) {
+        if (window.__t !== __t) {
+            break
+        }
+
+        await tick()
+    }
 })();
