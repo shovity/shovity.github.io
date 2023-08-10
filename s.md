@@ -14,7 +14,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  # zsh-autosuggestions
 sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions)/" ~/.zshrc
-sed -i "s/# DISABLE_AUTO_UPDATE/DISABLE_AUTO_UPDATE/" ~/.zshrc
+sed -i "s/# zstyle ':omz:update' mode disabled/zstyle ':omz:update' mode disabled/" ~/.zshrc
 echo 'PROMPT="%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"' >> ~/.zshrc
 echo alias doc="docker" >> ~/.zshrc
 echo alias docc="docker-compose" >> ~/.zshrc
