@@ -14,9 +14,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions  # zsh-autosuggestions
 sed -i "s/plugins=(git)/plugins=(git zsh-autosuggestions)/" ~/.zshrc
 sed -i "s/# zstyle ':omz:update' mode disabled/zstyle ':omz:update' mode disabled/" ~/.zshrc
-echo 'PROMPT="%{$fg[green]%}%m%{$reset_color%} ${PROMPT}"' >> ~/.zshrc
-echo alias doc="docker" >> ~/.zshrc
-echo alias docc="docker-compose" >> ~/.zshrc
 source ~/.zshrc
 echo set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab >> ~/.vimrc
 ```
@@ -47,7 +44,7 @@ sudo usermod -aG docker $USER
 ### Install nodejs
 
 ```
-curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g npm yarn
 ```
